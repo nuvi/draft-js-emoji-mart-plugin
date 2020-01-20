@@ -110,6 +110,7 @@ export default function ({
     },
     onChange: (editorState: EditorState) => {
       let newEditorState = attachImmutableEntitiesToEmojis(editorState);
+      const selection = editorState.getSelection();
 
       if (!newEditorState.getCurrentContent().equals(editorState.getCurrentContent())) {
         // Forcing the current selection ensures that it will be at it's right place.
@@ -118,7 +119,7 @@ export default function ({
         // the contenteditable.
         newEditorState = EditorState.forceSelection(
           newEditorState,
-          newEditorState.getSelection(),
+          selection,
         );
       }
 
