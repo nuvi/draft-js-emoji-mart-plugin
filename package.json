@@ -19,7 +19,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "babel --out-dir ./lib ./src",
     "flow": "flow",
-    "lint": "eslint ./src"
+    "lint": "eslint ./src",
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
